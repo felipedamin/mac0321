@@ -3,12 +3,12 @@ package trab1;
 public class JogoPokemon extends Controller{
 	
 	public void criaJogadores() {
-		Habilidade ataqueForte = new Habilidade(5, 2);
-		Habilidade ataqueRapido = new Habilidade(2.5, 8);
+		Habilidade ataqueForte = new Habilidade(5, 8);
+		Habilidade ataqueRapido = new Habilidade(2.5, 2);
 		Habilidade choqueDoTrovao = new Habilidade(5, 5);
-		Habilidade Mordida = new Habilidade(4,6);
-		Habilidade tarefaDeMac = new Habilidade(4,6);
-		Habilidade trabalhoDeMac = new Habilidade(7,1);
+		Habilidade Mordida = new Habilidade(4,4);
+		Habilidade tarefaDeMac = new Habilidade(4,4);
+		Habilidade trabalhoDeMac = new Habilidade(7,9);
 		Habilidade sintaxError = new Habilidade(4.5, 5);
 		
 		Habilidade[] habPikachu = new Habilidade[4];
@@ -34,17 +34,19 @@ public class JogoPokemon extends Controller{
 		Treinador jogador2 = new Treinador("Nome", poksJog2);
 	}
 	
-	private class jog1Ataca extends Event {
-		public jog1Ataca(long eventTime) {
+	private class jogAtaca extends Event {
+		Habilidade hab;
+		Treinador outro;
+		public jogAtaca(long eventTime, Habilidade habilidade, Treinador outro) {
 			super(eventTime);
+			hab = habilidade;
 		}
 		public void action() {
-			// Put hardware control code here to
-			// physically turn off the light.
-			light = false;
+			Double hp = outro.getPokemonAtual().getHp();
+			outro.getPokemonAtual().setHp(hp - hab.getDano());
 		}
 		public String description() {
-			return "Jogador 1 atacou com " + habilidade + " e deu um dano de: " + habilida.dano;
+			return "Jogador 1 atacou com " + hab + " e deu um dano de: " + hab.getDano();
 		}
 	}
 
