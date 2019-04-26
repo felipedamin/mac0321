@@ -2,18 +2,24 @@ package trab1;
 
 public class Treinador {
 	private String nome;
-	private Pokemon[] pokemons = new Pokemon[6];
+	private Pokemon[] pokemons;
+	private Pokemon pokemonAtual;
 	
+	public Treinador(String nome, Pokemon[] pokemons) {
+		this.nome = nome;
+		this.pokemons = pokemons;
+	}
+	
+	public void setPokemonAtual(Pokemon pokemon) {
+		this.pokemonAtual = pokemon;
+	}
 	public String getNome() {
 		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 	public Pokemon[] getPokemons() {
 		return pokemons;
 	}
-	public void setPokemons(Pokemon[] pokemons) {
-		this.pokemons = pokemons;
+	public Pokemon getPokemonAtual() {
+		return pokemonAtual;
 	}
 }

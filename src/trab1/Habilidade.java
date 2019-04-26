@@ -4,11 +4,13 @@ public class Habilidade {
 	private double dano;
 	private int prioridade;
 	
+	public Habilidade(double dano, int prioridade) {
+		this.dano = dano;
+		this.prioridade = prioridade;
+	}
+	
 	public int getPrioridade() {
 		return prioridade;
-	}
-	public void setPrioridade(int prioridade) {
-		this.prioridade = prioridade;
 	}
 	public String getTipo() {
 		return tipo;
@@ -18,9 +20,6 @@ public class Habilidade {
 	}
 	public double getDano() {
 		return dano;
-	}
-	public void setDano(double dano) {
-		this.dano = dano;
 	}
 	
 }
